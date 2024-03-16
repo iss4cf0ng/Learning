@@ -8,7 +8,9 @@ gcc hello.c -o hello.exe
 ```
 
 ## C++
+```
 g++ hello.cpp -o hello.exe
+```
 
 ## C#
 
