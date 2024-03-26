@@ -1,0 +1,12 @@
+#!/bin/bash
+
+foo=0 # global variable foo
+
+funct_1 () {
+	local foo
+	foo=1
+	echo "funct_1: foo=$foo"
+}
+
+echo "global: foo=$foo"
+funct_1
