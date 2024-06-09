@@ -1,0 +1,3 @@
+﻿  Source.cpp
+C:\Users\user\source\repos\HelloWorld\learn._strupr._strlwr\Source.cpp(5,9): warning C4068: 未知的 pragma 'error'
+  learn._strupr._strlwr.vcxproj -> C:\Users\user\source\repos\HelloWorld\Debug\learn._strupr._strlwr.exe
