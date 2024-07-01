@@ -2,6 +2,10 @@
 Code learning
 
 # Notes
+# Assembly
+- RISC-V
+- MASM
+
 ## C
 ```
 gcc hello.c -o hello.exe
