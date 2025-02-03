@@ -1,0 +1,7 @@
+﻿  XOR.cpp
+C:\Users\user\source\repos\Ran\XOR\XOR.cpp(60,33): warning C4267: 'argument': conversion from 'size_t' to 'ULONG', possible loss of data
+C:\Users\user\source\repos\Ran\XOR\XOR.cpp(62,32): warning C4267: 'argument': conversion from 'size_t' to 'ULONG', possible loss of data
+C:\Users\user\source\repos\Ran\XOR\XOR.cpp(65,33): warning C4267: 'argument': conversion from 'size_t' to 'ULONG', possible loss of data
+C:\Users\user\source\repos\Ran\XOR\XOR.cpp(67,32): warning C4267: 'argument': conversion from 'size_t' to 'ULONG', possible loss of data
+C:\Users\user\source\repos\Ran\XOR\XOR.cpp(70,33): warning C4267: 'argument': conversion from 'size_t' to 'ULONG', possible loss of data
+  XOR.vcxproj -> C:\Users\user\source\repos\Ran\x64\Debug\XOR.exe

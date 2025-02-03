@@ -1,0 +1,3 @@
+﻿  ezfile.cpp
+C:\Users\user\source\repos\Ran\ezfile\ezfile.cpp(51,1): warning C4102: 'Error_Exit': unreferenced label
+  ezfile.vcxproj -> C:\Users\user\source\repos\Ran\x64\Debug\ezfile.exe

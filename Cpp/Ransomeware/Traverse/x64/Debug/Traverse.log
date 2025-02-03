@@ -1,0 +1,10 @@
+﻿  Traverse.cpp
+C:\Users\user\source\repos\Ran\Traverse\Traverse.cpp(47,13): warning C4477: 'wprintf' : format string '%ld' requires an argument of type 'long', but variadic argument 2 has type 'LONGLONG'
+      C:\Users\user\source\repos\Ran\Traverse\Traverse.cpp(47,13):
+      consider using '%lld' in the format string
+      C:\Users\user\source\repos\Ran\Traverse\Traverse.cpp(47,13):
+      consider using '%Id' in the format string
+      C:\Users\user\source\repos\Ran\Traverse\Traverse.cpp(47,13):
+      consider using '%I64d' in the format string
+  
+  Traverse.vcxproj -> C:\Users\user\source\repos\Ran\x64\Debug\Traverse.exe

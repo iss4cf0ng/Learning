@@ -1,0 +1,4 @@
+﻿  RC4.cpp
+C:\Users\user\source\repos\Ran\RC4\RC4.cpp(66,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\user\source\repos\Ran\RC4\RC4.cpp(102,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  RC4.vcxproj -> C:\Users\user\source\repos\Ran\x64\Debug\RC4.exe
