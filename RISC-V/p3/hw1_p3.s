@@ -53,9 +53,9 @@ Terminate:
 ################################################################################
 
 .rodata
-    # pattern: .string "../../b10901119_hw1/p3/pattern0.txt"
-    # pattern: .string "../../b10901119_hw1/p3/pattern1.txt"
-    # pattern: .string "../../b10901119_hw1/p3/pattern2.txt"
+    # pattern: .string "../../stuid_hw1/p3/pattern0.txt"
+    # pattern: .string "../../stuid_hw1/p3/pattern1.txt"
+    # pattern: .string "../../stuid_hw1/p3/pattern2.txt"
 .text
 
 # Write your main function here.
