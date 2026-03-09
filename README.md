@@ -1,11 +1,10 @@
 # Learning
-Code learning
+Learning coding and git.
 
 # Notes
 # Assembly
 - RISC-V
 - MASM
-
 
 ## C
 ```
