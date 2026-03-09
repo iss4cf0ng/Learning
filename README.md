@@ -6,7 +6,6 @@ Code learning
 - RISC-V
 - MASM
 
-
 ## C
 ```
 gcc hello.c -o hello.exe
