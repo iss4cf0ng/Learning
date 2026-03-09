@@ -1,5 +1,5 @@
 # Learning
-Code learning
+Learning coding and git.
 
 # Notes
 # Assembly
