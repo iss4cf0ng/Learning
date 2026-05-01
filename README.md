@@ -47,6 +47,13 @@ chmod +x run.pl
 
 ## PowerShell
 
+## Rust
+
+```bash
+cargo init
+cargo build --release
+```
+
 ## Shell Script
 
 ## Matlab
