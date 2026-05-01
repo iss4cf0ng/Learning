@@ -16,12 +16,14 @@ gnatmake nuclear_bomb.ada
 - NASM
 
 ## C
-```
+
+```batch
 gcc hello.c -o hello.exe
 ```
 
 ## C++
-```
+
+```batch
 g++ hello.cpp -o hello.exe
 ```
 
@@ -37,7 +39,8 @@ go run .
 ## Java
 
 ## Perl
-```
+
+```bash
 perl run.pl
 chmod +x run.pl
 ./run.pl
@@ -61,4 +64,5 @@ cargo build --release
 ## Verilog
 
 ## Git
+
 pull request testing
