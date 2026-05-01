@@ -2,9 +2,18 @@
 Learning coding and git.
 
 # Notes
+# Ada
+
+```bash
+gnatmake nuclear_bomb.ada
+./nuclear_bomb
+```
+
 # Assembly
+
 - RISC-V
 - MASM
+- NASM
 
 ## C
 ```

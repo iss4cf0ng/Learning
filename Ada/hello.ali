@@ -1,0 +1,47 @@
+V "GNAT Lib v10"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+
+U nuclear_bomb%b	hello.adb		b453249f NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20230707070819 76789da1 ada%s
+D a-except.ads		20230707070819 a7106115 ada.exceptions%s
+D a-ioexce.ads		20230707070819 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20230707070819 119b8fb3 ada.streams%s
+D a-tags.ads		20230707070819 491b781d ada.tags%s
+D a-textio.ads		20230707070819 aef4d56d ada.text_io%s
+D a-unccon.ads		20230707070819 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20230707070819 5ab55268 interfaces%s
+D i-cstrea.ads		20230707070819 e53d8b8e interfaces.c_streams%s
+D hello.adb		20260501091253 1aa7f1f2 nuclear_bomb%b
+D system.ads		20230707070819 4635ec04 system%s
+D s-crtl.ads		20230707070819 0ebbdb71 system.crtl%s
+D s-exctab.ads		20230707070819 54135002 system.exception_table%s
+D s-ficobl.ads		20230707070819 078245e4 system.file_control_block%s
+D s-parame.ads		20230707070819 48ec542b system.parameters%s
+D s-secsta.ads		20230707070819 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20230707070819 a7318a92 system.soft_links%s
+D s-stache.ads		20230707070819 a37c21ec system.stack_checking%s
+D s-stalib.ads		20230707070819 09bd3940 system.standard_library%s
+D s-stoele.ads		20230707070819 2dc34a04 system.storage_elements%s
+D s-traent.ads		20230707070819 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20230707070819 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20230707070819 1b7d22d2 system.wch_con%s
+G a e
+G c Z b b [nuclear_bomb standard 3 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 10|1r6 5r4 6r4 7r4 8r4 9r4 10r4 11r4 12r4 13r4 14r4 15r4 16r4
+. 17r4
+X 6 a-textio.ads
+57K13*Text_IO 727e16 10|1w10 5r8 6r8 7r8 8r8 9r8 10r8 11r8 12r8 13r8 14r8
+. 15r8 16r8 17r8
+264U14*New_Line 10|8s16 13s16 16s16
+508U14*Put_Line 10|5s16 6s16 7s16 9s16 10s16 11s16 12s16 14s16 15s16 17s16
+X 10 hello.adb
+3U11*Nuclear_Bomb 3b11 18l5 18t17
+
