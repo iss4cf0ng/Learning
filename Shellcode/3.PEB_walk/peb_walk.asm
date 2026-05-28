@@ -1,4 +1,6 @@
 ; peb_walk.asm
+
+; // https://learn.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb
 ; typedef struct _TEB {
 ;     PVOID Reserved1[12];
 ;     PPEB  ProcessEnvironmentBlock;  // offset = 12 * 4 = 48 = 0x30
@@ -12,6 +14,7 @@
 ;     PVOID TlsExpansionSlots;
 ; } TEB, *PTEB;
 ;
+; // https://learn.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-teb
 ; typedef struct _PEB {
 ;     BYTE                          Reserved1[2];
 ;     BYTE                          BeingDebugged;
