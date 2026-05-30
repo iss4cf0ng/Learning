@@ -6,12 +6,12 @@ cd "$DIR"
 # Compile payload.c -> payload.dll
 echo "[*] Compiling payload.dll..."
 i686-w64-mingw32-gcc -shared -o payload.dll payload.c -Wl,--out-implib,payload.lib -static-libgcc
-echo "OK: $(wc -c < payload.dll) bytes"
+echo "  OK: $(wc -c < payload.dll) bytes"
 
 # Assemble stage1_dll.asm -> stage1_dll.bin
 echo "[*] Assembling stage1_dll.asm..."
 nasm -f bin stage1_dll.asm -o stage1_dll.bin
-echo "    OK: $(wc -c < stage1_dll.bin) bytes"
+echo "  OK: $(wc -c < stage1_dll.bin) bytes"
 
 # Verify string offsets are correct
 echo "[*] Verifying string table..."
@@ -44,12 +44,12 @@ lines = [', '.join(parts[i:i+12]) for i in range(0, len(parts), 12)]
 body  = ',\n'.join('  ' + l for l in lines)
 print('unsigned char shellcode[] = {\n' + body + '\n};')
 " > shellcode.h
-echo "OK: shellcode.h written"
+echo "  OK: shellcode.h written"
 
 # Compile loader.cpp
 echo "[*] Compiling loader.exe..."
 i686-w64-mingw32-g++ -o loader.exe loader.cpp -static
-echo "OK: $(wc -c < loader.exe) bytes"
+echo "  OK: $(wc -c < loader.exe) bytes"
 
 echo ""
 echo "[+] Build complete."
