@@ -19,7 +19,7 @@ int main()
     void *mem = VirtualAlloc(nullptr, sizeof(shellcode), MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
     if (!mem)
     {
-        printf("[-] VirtualAlloc failed: %1u\n", GetLastError());
+        printf("[-] VirtualAlloc failed: %lu\n", GetLastError());
         return 1;
     }
 

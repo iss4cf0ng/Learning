@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     if (!mem)
     {
-        printf("VirtualAlloc failed: %1u\n", GetLastError());
+        printf("VirtualAlloc failed: %lu\n", GetLastError());
         return 1;
     }
 
