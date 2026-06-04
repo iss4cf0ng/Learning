@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="MAIN" Id="{9c66033f-e740-42dd-984e-1f5de6971388}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	State : INT := 0;
+	
+	Timer1 : TON;
+	
+	Red : BOOL;
+	Yellow : BOOL;
+	Green : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE State OF
+0:
+	Red := TRUE;
+	Yellow := FALSE;
+	Green := FALSE;
+	
+1:
+	Red := FALSE;
+	Yellow := TRUE;
+	Green := FALSE;
+	
+2:
+	Red := FALSE;
+	Yellow := FALSE;
+	Green := TRUE;
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="16" Count="2" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="19" Count="3" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="23" Count="1" />
+      <LineId Id="27" Count="1" />
+      <LineId Id="14" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
