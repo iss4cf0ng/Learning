@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FB_TrafficLight" Id="{0634f410-c8d1-4220-ab79-b4f0ae564907}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_TrafficLight
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	State : INT := 0;
+	Timer1 : TON;
+	
+	Red : BOOL;
+	Yellow : BOOL;
+	Green : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE State OF
+0:
+	Red := TRUE;
+	Yellow := FALSE;
+	Green := FALSE;
+	
+	Timer1(IN := TRUE, PT := T#5S);
+	IF Timer1.Q THEN
+		Timer1(IN := FALSE);
+		State := 1;
+	END_IF
+	
+1:
+	Red := FALSE;
+	Yellow := TRUE;
+	Green := FALSE;
+	
+	Timer1(IN := TRUE, PT := T#5S);
+	IF Timer1.Q THEN
+		Timer1(IN := FALSE);
+		State := 2;
+	END_IF
+	
+2:
+	Red := FALSE;
+	Yellow := FALSE;
+	Green := TRUE;
+	
+	Timer1(IN := TRUE, PT := T#2S);
+	IF Timer1.Q THEN
+		Timer1(IN := FALSE);
+		State := 0;
+	END_IF
+	
+END_CASE]]></ST>
+    </Implementation>
+    <LineIds Name="FB_TrafficLight">
+      <LineId Id="9" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="20" Count="2" />
+      <LineId Id="35" Count="2" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="38" Count="1" />
+      <LineId Id="23" Count="4" />
+      <LineId Id="42" Count="3" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="28" Count="5" />
+      <LineId Id="49" Count="2" />
+      <LineId Id="53" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="19" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
