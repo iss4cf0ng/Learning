@@ -1,0 +1,9 @@
+*.exe
+*.dll
+*.bin
+*.elf
+*.o
+*.so
+*.rar
+*.zip
+*.7z

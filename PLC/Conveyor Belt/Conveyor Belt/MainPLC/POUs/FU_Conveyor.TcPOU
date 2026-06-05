@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.16">
+  <POU Name="FU_Conveyor" Id="{80b33d39-3e2c-4819-bd58-a78ad98622a9}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FU_Conveyor
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	Sensor : BOOL;
+	PrevSensor : BOOL;
+	Motor : BOOL;
+	Timer1 : TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF Sensor AND NOT PrevSensor THEN
+	Motor := TRUE;
+END_IF
+
+Timer1(IN := Motor, PT := T#3S);
+
+IF Timer1.Q THEN
+	Motor := FALSE;
+END_IF
+
+PrevSensor := Sensor;]]></ST>
+    </Implementation>
+    <LineIds Name="FU_Conveyor">
+      <LineId Id="9" Count="0" />
+      <LineId Id="13" Count="1" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="20" Count="1" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="23" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
