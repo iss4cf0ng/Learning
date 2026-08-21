@@ -3,12 +3,10 @@
 #include <windows.h>
 
 __declspec(dllexport)
-void payload_run(void)
-{
-    MessageboxA(NULL, "Hello from RC4-ecnrypted sRDI.", "OK!", MB_OK);
+void payload_run(void) {
+    MessageBoxA(NULL, "Hello from RC4 sRDI!", "Success", MB_OK);
 }
 
-BOOL WINAPI DllMain(HINSTANCE h, DWORD reason, LPVOID r)
-{
+BOOL WINAPI DllMain(HINSTANCE h, DWORD reason, LPVOID r) {
     return TRUE;
 }

