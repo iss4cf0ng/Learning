@@ -2,7 +2,7 @@
 
 #include <ntddk.h>
 
-VOID DriverUnload(IN PDRIVER_OBJECT driverObject)
+VOID DriverUnload(IN PDRIVER_OBJverObject)
 {
     UNREFERENCED_PARAMETER(driverObject);
     KdPrint(("DriverUnload: Bye bye!\n"));
