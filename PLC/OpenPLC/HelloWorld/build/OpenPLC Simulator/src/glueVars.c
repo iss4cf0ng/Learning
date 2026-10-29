@@ -161,9 +161,9 @@ extern unsigned long long common_ticktime__;
 void glueVars()
 {
     
-    bool_input_ptr[0][0] = (IEC_BOOL *)__IX0_0;
+    bool_input_ptr[1][0] = (IEC_BOOL *)__IX1_0;
     
-    bool_output_ptr[0][0] = (IEC_BOOL *)__QX0_0;
+    bool_output_ptr[1][0] = (IEC_BOOL *)__QX1_0;
     
 }
 

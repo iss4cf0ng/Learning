@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0201" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ns1="http://www.plcopen.org/xml/tc6_0201">
-  <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2026-08-21T10:17:41"/>
-  <contentHeader name="Unnamed" modificationDateTime="2026-08-21T10:17:41">
+  <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2026-08-22T00:00:32"/>
+  <contentHeader name="Unnamed" modificationDateTime="2026-08-22T00:00:32">
     <coordinateInfo>
       <fbd>
         <scaling x="16" y="16"/>
@@ -20,12 +20,12 @@
       <pou name="main" pouType="program">
         <interface>
           <localVars>
-            <variable name="button" address="%IX0.0">
+            <variable name="button" address="%IX1.0">
               <type>
                 <BOOL/>
               </type>
             </variable>
-            <variable name="light" address="%QX0.0">
+            <variable name="light" address="%QX1.0">
               <type>
                 <BOOL/>
               </type>
@@ -39,12 +39,13 @@
         </interface>
         <body>
           <ST>
-            <xhtml:p><![CDATA[if button = true then
-    light := true;
-    counter := true;
-else
-    light := false;
-end_if;]]></xhtml:p>
+            <xhtml:p><![CDATA[IF button THEN
+    light := TRUE;
+    counter := 1;
+ELSE
+    light := FALSE;
+    counter := 0; 
+END_IF;]]></xhtml:p>
           </ST>
         </body>
         <documentation>

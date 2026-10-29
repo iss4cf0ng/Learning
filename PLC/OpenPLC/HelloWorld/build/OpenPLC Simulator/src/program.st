@@ -3,16 +3,17 @@ PROGRAM main
     counter : INT;
   END_VAR
   VAR
-    button AT %IX0.0 : BOOL;
-    light AT %QX0.0 : BOOL;
+    button AT %IX1.0 : BOOL;
+    light AT %QX1.0 : BOOL;
   END_VAR
 
-  if button = true then
-      light := true;
-      counter := true;
-  else
-      light := false;
-  end_if;
+  IF button THEN
+      light := TRUE;
+      counter := 1;
+  ELSE
+      light := FALSE;
+      counter := 0; 
+  END_IF;
 END_PROGRAM
 
 
@@ -24,7 +25,7 @@ CONFIGURATION Config0
   END_RESOURCE
 END_CONFIGURATION
 
-(*DBG:char md5[] = "120c092e8c640efa73c85600b37ff0f2";*)
+(*DBG:char md5[] = "24ac9c2a58c6cd992f0f438c16cefc7a";*)
 (*DBG:/**)
 (*DBG: * This file is part of OpenPLC Runtime*)
 (*DBG: **)
@@ -60,7 +61,7 @@ END_CONFIGURATION
 (*DBG:#define SAME_ENDIANNESS      0*)
 (*DBG:#define REVERSE_ENDIANNESS   1*)
 (*DBG:*)
-(*DBG:char plc_program_md5[] = "120c092e8c640efa73c85600b37ff0f2";*)
+(*DBG:char plc_program_md5[] = "24ac9c2a58c6cd992f0f438c16cefc7a";*)
 (*DBG:*)
 (*DBG:uint8_t endianness;*)
 (*DBG:*)
